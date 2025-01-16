@@ -28,3 +28,14 @@ module.exports = async (req, res) => {
         res.status(500).json({ error: 'Internal server error', details: error.message });
     }
 };
+
+module.exports = async (req, res) => {
+    try {
+        // 测试基本功能
+        res.status(200).json({ message: 'Proxy server is running!' });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
